@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="._1_Intent.C1_1_Intent">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intentNorm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Move Activity"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intentWithData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pindah Activity Dengan Data"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialANumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dial a Number"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intentParcelize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intent Parcelize"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intentResultLatihan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buat Latihan Result ye"/>
+
+    <Button
+        android:id="@+id/btn_move_for_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Move With Result 1" />
+
+    <Button
+        android:id="@+id/btn_move_for_result2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Move With Result 2" />
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/resultActiviryt"
+        android:textSize="24sp" />
+</LinearLayout>

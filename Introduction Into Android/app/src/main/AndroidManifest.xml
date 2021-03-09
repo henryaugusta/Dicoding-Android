@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.firriezky.dicoding">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Dicoding">
+        <activity android:name="._5_ListView.ListViewMainActivity"></activity>
+        <activity android:name="._1_Intent.LatihanMoveWithResult" />
+        <activity android:name="._4_FlexibleFragment.Exercise.SocialActivity" />
+        <activity android:name="._4_FlexibleFragment.ProfileActivity" />
+        <activity android:name="._4_FlexibleFragment.MainActivityFragment" />
+        <activity android:name="._1_Intent.MoveWithResultDef" />
+        <activity android:name="._1_Intent.MoveWithResultActivity" />
+        <activity android:name="._1_Intent.parcelable.IntentParcelDestination" />
+        <activity android:name="._3_recyclerview.RecyclerView1" />
+        <activity android:name="._2_TableLayout.TableLayout" />
+        <activity android:name="._1_Intent.MoveActivity" />
+        <activity android:name="._1_Intent.C1_1_Intent" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
