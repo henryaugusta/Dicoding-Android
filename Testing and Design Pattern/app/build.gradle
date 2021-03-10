@@ -7,6 +7,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    viewBinding{
+        enabled =  true
+    }
+
     defaultConfig {
         applicationId "com.feylabs.unittesting"
         minSdkVersion 23
@@ -33,6 +37,8 @@ android {
 }
 
 dependencies {
+    //MOCKITO TEST
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.3.3'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
