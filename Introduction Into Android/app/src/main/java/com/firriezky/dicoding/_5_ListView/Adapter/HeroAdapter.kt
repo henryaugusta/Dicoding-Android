@@ -34,6 +34,7 @@ class HeroAdapter(val context : Context) : BaseAdapter(){
         val viewHolder = ViewHolder(itemView as View)
         val hero = getItem(position) as Hero
         viewHolder.bind(hero)
+
         return  itemView
     }
 
