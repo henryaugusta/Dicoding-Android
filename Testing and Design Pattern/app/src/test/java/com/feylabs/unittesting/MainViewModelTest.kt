@@ -11,7 +11,6 @@ class MainViewModelTest : TestCase() {
     private lateinit var cuboidModel: CuboidModel
 
 
-
     private val dummyLength = 12.0
     private val dummyWidth = 7.0
     private val dummyHeight = 6.0
