@@ -1,0 +1,36 @@
+Terdapat tiga tipe jenis bug umum yang kerap terjadi pada proses pengembangan aplikasi Android: 
+Bug yang menyebabkan Force Closed
+Android-Force-Close.jpg
+Kelompok bug ini akan menampilkan dialog force closed. Bug ini dapat terjadi ketika kode kita tidak dapat menangani kondisi tertentu saat aplikasi sedang berjalan:
+
+Java Null Pointer Exception, umumnya terjadi ketika kode kita mengharapkan obyek tertentu untuk diproses, namun yang ia peroleh adalah nilai null.
+
+Java Out of Memory Exception, umumnya terjadi karena memori yang digunakan oleh aplikasi melebihi jatah yang disediakan oleh sistem android. Bug ini bisa terjadi misalnya ketika kita memuat gambar dengan ukuran besar tanpa mengecilkannya terlebih dahulu.
+
+Java Index Out Of Bound, terjadi ketika kita mencoba mengakses data dengan indeks yang berada di luar jangkauan ukuran dari sebuah collection seperti arraylist atau linkedlist. Contoh dari masalah ini dapat Anda lihat pada kode berikut ini:
+Kotlin
+Java
+for (a in 0..presList.size) {
+    val companyName = presList[a + 1]
+}
+Anggap preList memiliki 2 item di dalamnya. Masalah akan muncul ketika baris ini dijalankan companyName = presList.get(a + 1);. 
+Pada perulangan kedua, nilai a bernilai 1. Ketika ia dijalankan maka ia akan berusaha mengambil item pada posisi ke 2 (a + 1 = 2, karena a bernilai 1). Tidak ada item pada posisi ke 2. Ini karena collection dimulai dari posisi 0. Sehingga posisi valid terakhir untuk presList adalah 1.
+Java Memory Leak, ini adalah bug yang sangat berpengaruh pada performa aplikasi karena berhubungan dengan penggunaan memori peranti pengguna.
+
+Bug yang menyebabkan Application is not Responding
+zAs7K5STqywU8Gh2T3ku
+Android akan menganggap sebuah aplikasi sebagai not responding bila proses yang berjalan di main thread tidak selesai dalam waktu 5 detik.
+
+
+Bug yang disebabkan oleh kesalahan logika
+Ini adalah bug yang berbahaya. Kesalahan dalam kelompok ini dapat menyebabkan aplikasi berperilaku di luar rancangan kita walaupun aplikasi tidak crash.
+
+
+
+Ketiga grup bug atau eror yang terjadi di android umumnya didasari pada beberapa hal.
+
+Pemahaman tentang proses bisnis yang dirancang.
+Pemahaman tentang komponen aplikasi android. 
+Konsep OOP dan pemahaman tentang Java yang digunakan.
+Ketelitian dalam menulis program (termasuk kesalahan algoritma yang ada) hingga pada kurang baiknya dalam melakukan pengujian aplikasi. 
+
