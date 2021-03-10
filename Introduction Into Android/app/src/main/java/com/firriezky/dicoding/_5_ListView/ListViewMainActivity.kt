@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.firriezky.dicoding.R
 import com.firriezky.dicoding._5_ListView.Adapter.HeroAdapter
 import com.firriezky.dicoding.databinding.ActivityListViewMainBinding
@@ -30,11 +31,16 @@ class ListViewMainActivity : AppCompatActivity() {
 
 //        val adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,dataName)
        adapter = HeroAdapter(this)
+        adapter.setOnClickInterface(object : HeroAdapter.HeroInterface{
+
+            override fun onClick(hero: Hero) {
+                Toast.makeText(applicationContext,hero.name,Toast.LENGTH_LONG).show()
+            }
+
+        })
+
         binding.lvList.adapter=adapter
-
         adapter.heroes=dataHeroes
-
-
     }
 
     private fun prepare(){
