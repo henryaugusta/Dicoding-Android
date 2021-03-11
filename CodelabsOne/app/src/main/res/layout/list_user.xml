@@ -16,26 +16,54 @@
         android:background="@drawable/res_rounded_20">
 
         <TextView
-            android:id="@+id/labelBookTitle"
+            android:id="@+id/labelUserUsername"
             android:layout_marginTop="10dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:text="@string/book_title_goes_here"
+            android:text="@string/user_userrname_here"
             android:textColor="@color/white"/>
 
         <TextView
-            android:id="@+id/labelBookDesc"
-            android:layout_below="@id/labelBookTitle"
+            android:id="@+id/labelUserRepository"
+            android:layout_below="@id/labelUserUsername"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="11sp"
             android:fontFamily="@font/nunito_light"
-            android:text="@string/lorem_ipsum"
+            android:text="User Repository"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/labelUserFollowers"
+            android:layout_below="@id/labelUserRepository"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:fontFamily="@font/nunito_light"
+            android:text="User Followers"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/labelUserFollowing"
+            android:layout_below="@id/labelUserFollowers"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:fontFamily="@font/nunito_light"
+            android:text="User Followers"
             android:maxLines="2"
             android:ellipsize="end"
             android:textColor="@color/white"/>
@@ -45,34 +73,19 @@
             android:layout_marginTop="6dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="150dp"
-            android:layout_below="@id/labelBookDesc"
+            android:layout_below="@id/labelUserFollowing"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#c0c0c0"/>
 
-        <TextView
-            android:id="@+id/labelBookAuthor"
-            android:layout_alignParentStart="true"
-            android:layout_toEndOf="@id/btnSeeDetail"
-            android:layout_below="@id/hr1"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/btnSeeDetail"
-            android:textSize="10sp"
-            android:maxLength="23"
-            android:text="@string/book_author_written_here"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:textColor="@color/white"/>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSeeDetail"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/rounded"
-            android:layout_below="@id/labelBookDesc"
+            android:layout_below="@id/labelUserFollowers"
             android:fontFamily="@font/poppins_regular"
             android:layout_marginEnd="20dp"
             android:layout_alignParentEnd="true"
@@ -95,7 +108,7 @@
         android:id="@+id/imageRv"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/book_atomic_habits"/>
+        android:src="@drawable/user1"/>
 
 
 </RelativeLayout>

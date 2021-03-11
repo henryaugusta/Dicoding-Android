@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         val textList = listOf(
-            getString(R.string.start_reading_for_your_future_investment),
+            getString(R.string.start_coding_for_your_future_investment),
             getString(R.string.keep_upgraded),
-            getString(R.string.only_best_book)
+            getString(R.string.only_verif)
         )
 
 
