@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeFragment">
+    tools:context=".navdraw.HomeFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,6 +17,13 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/to_category" />
+    <Button
+        android:id="@+id/btn_neo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/ke_frragment_neo" />
     <Button
         android:id="@+id/btn_profile"
         android:layout_width="match_parent"

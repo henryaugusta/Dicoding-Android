@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.razky.RazkyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:textSize="20sp"
+        android:id="@+id/text_raz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/pushMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PENCET AKU"
+        />
+
+</LinearLayout>

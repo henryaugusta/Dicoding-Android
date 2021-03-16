@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:menuCategory="container">
+
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="@string/search"
+            app:actionViewClass="androidx.appcompat.widget.SearchView"
+            app:showAsAction="collapseActionView|always"
+            />
+
+        <item
+            android:id="@+id/menu1"
+            android:icon="@drawable/ic_baseline_announcement_24"
+            android:title="Menu Hiiji"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/menu2"
+            android:title="Menu Dua" />
+
+        <item
+            android:id="@+id/menu3"
+            android:icon="@drawable/ic_baseline_announcement_24"
+            android:title="Menu TIlu" />
+
+        <item
+            android:id="@+id/menu4"
+            android:icon="@drawable/ic_baseline_construction_24"
+            android:title="Menu Opat"
+            app:showAsAction="collapseActionView"/>
+
+
+
+
+    </group>
+</menu>

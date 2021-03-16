@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.feylabs.navigation.R
 import com.feylabs.navigation.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,6 +57,9 @@ class HomeFragment : Fragment() {
             Toast.makeText(requireContext(),"ehem",Toast.LENGTH_LONG).show()
             view.findNavController().navigate(R.id.action_homeFragment_to_profileActivity)
         }
+
+        binding?.btnNeo?.setOnClickListener (Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_neoFragment))
+
     }
 
     override fun onDestroy() {
