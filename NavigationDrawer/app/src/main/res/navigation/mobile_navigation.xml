@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.feylabs.navigationdrawer.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home_navdraw" />
 
     <fragment
         android:id="@+id/nav_gallery"
