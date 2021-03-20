@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer">
+        <activity android:name=".tab_layout.MyTabLayout"></activity>
         <activity
             android:name=".bottom_navigation.MyBottomNavigation"
-            android:label="@string/title_activity_my_bottom_navigation"></activity>
+            android:label="@string/title_activity_my_bottom_navigation" />
         <activity android:name=".action_bar.MenuActivity" />
         <activity android:name=".action_bar.ActionBarActivity" />
         <activity
