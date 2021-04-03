@@ -1,4 +1,4 @@
-package com.feylabs.navigationdrawer
+package com.feylabs.navigationdrawer.navigation_drawer
 
 import android.os.Bundle
 import android.view.Menu
@@ -14,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
+import com.feylabs.navigationdrawer.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 class NavigationDrawerActivity : AppCompatActivity() {
@@ -46,7 +47,11 @@ class NavigationDrawerActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_cart), drawerLayout)
+            R.id.nav_home,
+            R.id.nav_gallery,
+            R.id.nav_slideshow,
+            R.id.nav_cart
+        ), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

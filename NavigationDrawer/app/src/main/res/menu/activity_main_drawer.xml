@@ -37,9 +37,14 @@
                 android:icon="@drawable/ic_map"
                 android:title="@string/bottom_navigation" />
             <item
-                android:id="@+id/nav_hotel"
-                android:icon="@drawable/ic_hotel"
-                android:title="@string/menu_hotel" />
+                android:id="@+id/nav_activityTabLayout"
+                android:icon="@drawable/ic_map"
+                android:title="@string/tab_layout" />
+            <item
+                android:id="@+id/nav_activityTabLayoutSingle"
+                android:icon="@drawable/ic_map"
+                android:title="@string/tab_layout_single" />
+
             <item
                 android:id="@+id/nav_subway"
                 android:icon="@drawable/ic_subway"
