@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.HomeFragment">
+    tools:context=".view.fragment.HomeFragment">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -16,13 +16,14 @@
         android:layout_centerVertical="true"
         android:visibility="gone"/>
 
-    <in.codeshuffle.typewriterview.TypeWriterView
+    <TextView
         android:id="@+id/label_placeholder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="20sp"
         android:textAlignment="center"
+        android:soundEffectsEnabled="false"
         android:fontFamily="@font/sf_pro_display"
         android:text="@string/search_github_users_that_might_inspired_you"
         android:textColor="@color/blue_active"

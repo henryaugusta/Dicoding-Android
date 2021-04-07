@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SettingsFragment">
+    android:orientation="vertical"
+    tools:context=".view.fragment.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_margin="15dp"
+        android:background="@drawable/drawable_oval"
+        android:backgroundTint="@color/blue_bg_light"
+        android:id="@+id/langchanges"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Ini Fragment Settings" />
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="@string/change_language"
+        android:fontFamily="@font/nunito_light"
+        android:drawablePadding="10dp"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableStartCompat="@drawable/ic_baseline_language_24" />
 
-</FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

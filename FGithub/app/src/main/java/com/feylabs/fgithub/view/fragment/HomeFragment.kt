@@ -1,11 +1,7 @@
-package com.feylabs.fgithub.view
+package com.feylabs.fgithub.view.fragment
 
-import `in`.codeshuffle.typewriterview.TypeWriterListener
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +14,7 @@ import com.feylabs.fgithub.adapter.SearchAdapter
 import com.feylabs.fgithub.databinding.FragmentHomeBinding
 import com.feylabs.fgithub.model.SearchResult
 import com.feylabs.fgithub.util.BaseFragment
+import com.feylabs.fgithub.view.activity.DetailUserActivity
 import com.feylabs.fgithub.viewmodel.UserViewModel
 import www.sanju.motiontoast.MotionToast
 
@@ -30,6 +27,14 @@ class HomeFragment : BaseFragment() {
 
     companion object{
         const val USER = "user_id"
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,12 +56,13 @@ class HomeFragment : BaseFragment() {
         searchViewModel = ViewModelProvider(requireActivity()).get(UserViewModel::class.java)
 
         setRecyclerView()
-        vbind.labelPlaceholder.animateText(getString(R.string.search_github_users_that_might_inspired_you))
+        vbind.labelPlaceholder.setText(getString(R.string.search_github_users_that_might_inspired_you))
 
         val adapter = SearchAdapter()
         adapter.setInterface(object : SearchAdapter.SearchAdapterInterface {
             override fun onclick(model: SearchResult) {
-                val intent = Intent(requireActivity(),DetailUserActivity::class.java)
+                val intent = Intent(requireActivity(),
+                    DetailUserActivity::class.java)
                 intent.putExtra(USER,model)
                 startActivity(intent)
             }
@@ -76,8 +82,6 @@ class HomeFragment : BaseFragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText.toString().isEmpty()) {
-                    vbind.labelPlaceholder.text=""
-                    vbind.labelPlaceholder.animateText(getString(R.string.search_github_users_that_might_inspired_you))
                     vbind.labelPlaceholder.visibility = View.VISIBLE
                     adapter.clearData()
                     adapter.notifyDataSetChanged()

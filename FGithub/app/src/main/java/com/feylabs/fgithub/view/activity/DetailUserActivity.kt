@@ -1,4 +1,4 @@
-package com.feylabs.fgithub.view
+package com.feylabs.fgithub.view.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,6 +12,8 @@ import com.feylabs.fgithub.model.SearchResult
 import com.feylabs.fgithub.model.User
 import com.feylabs.fgithub.util.BaseActivity
 import com.feylabs.fgithub.util.Util
+import com.feylabs.fgithub.view.fragment.FollowFragment
+import com.feylabs.fgithub.view.fragment.HomeFragment
 import com.feylabs.fgithub.viewmodel.DetailViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.squareup.picasso.Picasso
@@ -23,7 +25,8 @@ class DetailUserActivity : BaseActivity() {
     lateinit var detailViewModel: DetailViewModel
     var urlFollowing = ""
     var urlFollowers = ""
-    private val followFragment = FollowFragment()
+    private val followFragment =
+        FollowFragment()
 
     companion object {
         const val URL = "url"
@@ -37,8 +40,30 @@ class DetailUserActivity : BaseActivity() {
 
         Util.hideActionBar(this)
 
+        
+        viewbind.backButton.setOnClickListener {
+            super.onBackPressed()
+        }
+
 
         val urlDetail = intent.getParcelableExtra<SearchResult>(HomeFragment.USER)?.url.toString()
+        setUpDetailViewModel(urlDetail)
+
+
+        val mFragmentManager = supportFragmentManager
+        mFragmentManager
+            .beginTransaction()
+            .add(R.id.nav_host_fragment,
+                FollowFragment(), HomeFragment::class.java.simpleName)
+            .commit()
+
+        val bottomNav = viewbind.navView
+        bottomNav.setOnNavigationItemSelectedListener(bottomNavListener)
+
+
+    }
+
+    private fun setUpDetailViewModel(urlDetail : String) {
         detailViewModel = ViewModelProvider(
             this,
             ViewModelProvider.NewInstanceFactory()
@@ -46,7 +71,6 @@ class DetailUserActivity : BaseActivity() {
 
         detailViewModel.getDetail(urlDetail)
         viewbind.progressBar.visibility = View.VISIBLE
-
 
         detailViewModel.userResult.observe(this, Observer {
             if (it != null) {
@@ -57,39 +81,28 @@ class DetailUserActivity : BaseActivity() {
                 viewbind.progressBar.visibility = View.VISIBLE
             }
         })
+    }
 
-        val mFragmentManager = supportFragmentManager
-        mFragmentManager
-            .beginTransaction()
-            .add(R.id.nav_host_fragment, FollowFragment(), HomeFragment::class.java.simpleName)
-            .commit()
-
-        val bottomNav = viewbind.navView
-        val bottomNavListener = BottomNavigationView.OnNavigationItemSelectedListener { menu ->
-            when (menu.itemId) {
-                R.id.navigation_followers -> {
-                    val bundle = Bundle()
-                    val fragment = FollowFragment()
-                    bundle.putString(URL, urlFollowers)
-                    addFragment(fragment, bundle)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_following -> {
-                    val bundle = Bundle()
-                    val fragment = FollowFragment()
-                    bundle.putString(URL, urlFollowing)
-                    addFragment(fragment, bundle)
-                    return@OnNavigationItemSelectedListener true
-                }
-                else -> {
-                    false
-                }
+    val bottomNavListener = BottomNavigationView.OnNavigationItemSelectedListener { menu ->
+        when (menu.itemId) {
+            R.id.navigation_followers -> {
+                val bundle = Bundle()
+                val fragment = FollowFragment()
+                bundle.putString(URL, urlFollowers)
+                addFragment(fragment, bundle)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_following -> {
+                val bundle = Bundle()
+                val fragment = FollowFragment()
+                bundle.putString(URL, urlFollowing)
+                addFragment(fragment, bundle)
+                return@OnNavigationItemSelectedListener true
+            }
+            else -> {
+                false
             }
         }
-
-        bottomNav.setOnNavigationItemSelectedListener(bottomNavListener)
-
-
     }
 
     @SuppressLint("SetTextI18n")

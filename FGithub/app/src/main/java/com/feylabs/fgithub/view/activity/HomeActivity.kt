@@ -1,14 +1,13 @@
-package com.feylabs.fgithub.view
+package com.feylabs.fgithub.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
 import com.feylabs.fgithub.R
 import com.feylabs.fgithub.databinding.ActivityHomeBinding
 import com.feylabs.fgithub.util.BaseActivity
-import com.feylabs.fgithub.util.Util
+import com.feylabs.fgithub.view.fragment.AboutFragment
+import com.feylabs.fgithub.view.fragment.HomeFragment
+import com.feylabs.fgithub.view.fragment.SettingsFragment
 
 class HomeActivity : BaseActivity() {
     lateinit var vbinding: ActivityHomeBinding
@@ -19,7 +18,7 @@ class HomeActivity : BaseActivity() {
 
         actionBar?.hide()
         supportActionBar?.hide();
-        showSuccessToast("Hallo","Selamat Datang")
+        showSuccessToast("Hallo", "Selamat Datang")
 
 
         vbinding.topNavigationConstraint.setNavigationChangeListener { view, position ->
@@ -28,10 +27,10 @@ class HomeActivity : BaseActivity() {
                     replaceFragment(HomeFragment())
                 }
                 1 -> {
-                    replaceFragment(SettingsFragment())
+                    replaceFragment(AboutFragment())
                 }
                 2 -> {
-                    replaceFragment(AboutFragment())
+                    replaceFragment(SettingsFragment())
                 }
             }
         }

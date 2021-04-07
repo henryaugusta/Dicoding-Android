@@ -20,31 +20,26 @@ import org.json.JSONObject
 
 class UserViewModel : ViewModel() {
     val searchResultQuery = MutableLiveData<MutableList<SearchResult>>()
-    var status = MutableLiveData<String?>()
 
     fun searchUser(query: String) {
         Log.d("query", query)
-        viewModelScope.launch {
-            AndroidNetworking.get("${Endpoint.BASE_URL}/search/users")
-                .addHeaders("token", Endpoint.TOKEN)
-                .addQueryParameter("q", query)
-                .build()
-                .getAsJSONObject(object : JSONObjectRequestListener {
-                    override fun onResponse(response: JSONObject) {
-                        Log.d("responsez", response.toString())
-                        val item = response.getJSONArray("items")
-                        processUserData(item)
-                        status.postValue("1")
-                    }
+        AndroidNetworking.get("${Endpoint.BASE_URL}/search/users")
+            .addHeaders("Authorization", Endpoint.TOKEN)
+            .addQueryParameter("q", query)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
+                override fun onResponse(response: JSONObject) {
+                    Log.d("responsez", response.toString())
+                    val item = response.getJSONArray("items")
+                    processUserData(item)
+                }
 
-                    override fun onError(anError: ANError?) {
-                        Log.d("responsez_error", anError?.message.toString())
-                        Log.d("responsez_error_body", anError?.errorBody.toString())
-                        Log.d("responsez_error_body", anError?.errorDetail.toString())
-                        status.postValue("0")
-                    }
-                })
-        }
+                override fun onError(anError: ANError?) {
+                    Log.d("responsez_error", anError?.message.toString())
+                    Log.d("responsez_error_body", anError?.errorBody.toString())
+                    Log.d("responsez_error_body", anError?.errorDetail.toString())
+                }
+            })
     }
 
     fun processUserData(item: JSONArray) {
@@ -66,7 +61,6 @@ class UserViewModel : ViewModel() {
             searchResultQuery.postValue(dataUserFromAPI)
         }
     }
-
 
 
     private fun getUserName(username: String): String {
