@@ -30,7 +30,6 @@ class MySharedPreferences(context: Context) {
         return SharedPref.getString(KEY_NAME, null)
     }
 
-
     fun clearPreferences(){
         editor.clear()
         editor.commit()
