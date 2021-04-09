@@ -8,8 +8,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Build
-import android.provider.Settings.System.DATE_FORMAT
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -115,7 +115,10 @@ class AlarmReceiver : BroadcastReceiver() {
         val channelId = "Channel_1"
         val channelName = "AlarmManager channel"
         val notificationManagerCompat = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+
+        val path: Uri = Uri.parse("android.resource://com.feylabs.myalarmmanager/raw/ericson.mp3")
+//        val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val alarmSound = path
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_baseline_access_time_24)
             .setContentTitle(title)
@@ -123,6 +126,8 @@ class AlarmReceiver : BroadcastReceiver() {
             .setColor(ContextCompat.getColor(context, android.R.color.transparent))
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
             .setSound(alarmSound)
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(channelId,
                 channelName,

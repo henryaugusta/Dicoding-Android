@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.DetailUserActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/drawable_oval"
+                android:backgroundTint="@color/orange_bg_light"
+                android:padding="15dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_photo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/me" />
+
+                <TextView
+                    android:id="@+id/label_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/user_photo"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="User Username Written Here" />
+
+                <TextView
+                    android:id="@+id/label_user_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_user_name"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/user_photo"
+                    android:fontFamily="@font/nunito_light"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    tools:text="User Username Written Here" />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:background="@drawable/drawable_oval"
+                android:backgroundTint="@color/red_bg_light"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:id="@+id/user_followers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/nunito_light"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_followers"
+                    tools:text="44 Followers" />
+
+                <TextView
+                    android:id="@+id/user_following"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/nunito_light"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_user"
+                    tools:text="44 Following" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:id="@+id/user_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/nunito_light"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_building"
+                    tools:text="User Company Here" />
+
+                <TextView
+                    android:id="@+id/user_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/nunito_light"
+                    android:text="@string/loading"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_baseline_location_on_24"
+                    tools:text="User Location" />
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/user_repo_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/nunito_light"
+                android:text="@string/loading_repository_count"
+                android:textColor="@color/black"
+                app:drawableStartCompat="@drawable/ic_baseline_code_24"
+                tools:text="Repository Count : " />
+
+
+            <TextView
+                android:id="@+id/user_repo_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="11dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/nunito_light"
+                android:text="@string/loading_user_bio"
+                android:textColor="@color/black"
+                app:drawableStartCompat="@drawable/ic_baseline_format_quote_24"
+                tools:text="User Bio : " />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="11dp"
+                android:backgroundTint="@color/green_bg_light"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_detail_menu" />
+
+    <FrameLayout
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_above="@id/nav_view"
+        android:layout_alignParentBottom="true"
+         />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

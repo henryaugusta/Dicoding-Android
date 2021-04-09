@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.HomeActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="25dp">
+
+        <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+            android:id="@+id/top_navigation_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            app:bnc_mode="spread"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/c_item_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:bt_active="true"
+                app:bt_badgeBackgroundColor="#FCEBE9"
+                app:bt_colorActive="@color/red_active"
+                app:bt_colorInactive="@color/red_inactive"
+                app:bt_icon="@drawable/ic_baseline_home_24"
+                app:bt_padding="10dp"
+                app:bt_shape="@drawable/drawable_oval"
+                app:bt_title="@string/home"
+                app:bt_titlePadding="10dp" />
+
+
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/c_item_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:bt_active="false"
+                app:bt_colorActive="@color/green_active"
+                app:bt_colorInactive="@color/green_inactive"
+                app:bt_icon="@drawable/ic_baseline_info_24"
+                app:bt_padding="10dp"
+                app:bt_shape="@drawable/drawable_oval"
+                app:bt_shapeColor="@color/green_bg_light"
+                app:bt_title="@string/my_profile"
+                app:bt_titlePadding="10dp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/c_item_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:bt_active="false"
+                app:bt_colorActive="@color/blue_active"
+                app:bt_colorInactive="@color/blue_inactive"
+                app:bt_icon="@drawable/ic_baseline_settings_24"
+                app:bt_padding="10dp"
+                app:bt_shape="@drawable/drawable_oval"
+                app:bt_shapeColor="@color/blue_bg_light"
+                app:bt_title="@string/settings"
+                app:bt_titlePadding="10dp" />
+
+            <!-- Add more child items here - max upto 5 -->
+
+        </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/fragNavHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
